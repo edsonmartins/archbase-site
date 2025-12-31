@@ -1,0 +1,284 @@
+{
+  "nav": {
+    "home": "Início",
+    "features": "Recursos",
+    "components": "Componentes",
+    "docs": "Documentação",
+    "github": "GitHub",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Framework Full-Stack para",
+    "highlight": "Aplicações Corporativas",
+    "subtitle": "Ecossistema Open Source com DDD Java + React Components. Construa aplicações empresariais com produtividade e qualidade.",
+    "cta": {
+      "primary": "Começar Agora",
+      "secondary": "Ver no GitHub"
+    }
+  },
+  "framework": {
+    "title": "Archbase Framework",
+    "subtitle": "Backend Java com DDD e Arquitetura Hexagonal",
+    "features": [
+      {
+        "title": "Domain-Driven Design",
+        "description": "Implementação completa de DDD com Entities, Aggregates, Value Objects e Ubiquitous Language.",
+        "icon": "domain"
+      },
+      {
+        "title": "Multi-tenancy Nativo",
+        "description": "Isolamento garantido de dados entre tenants com estratégias flexíveis de configuração.",
+        "icon": "building"
+      },
+      {
+        "title": "CQRS + Event Bus",
+        "description": "Command Query Responsibility Segregation com bus de eventos para arquitetura orientada a eventos.",
+        "icon": "zap"
+      },
+      {
+        "title": "Workflow Engine",
+        "description": "Fluxos sequenciais, paralelos e condicionais para orquestração de processos complexos.",
+        "icon": "workflow"
+      },
+      {
+        "title": "QueryDSL + RSQL",
+        "description": "Queries type-safe e filtros dinâmicos sem código customizado.",
+        "icon": "search"
+      },
+      {
+        "title": "Spring Boot 3.5",
+        "description": "Auto-configuração completa com Spring Boot 3.5 e Java 17+.",
+        "icon": "spring"
+      }
+    ]
+  },
+  "react": {
+    "title": "Archbase React v3",
+    "subtitle": "100+ Componentes TypeScript para Frontend Corporativo",
+    "features": [
+      {
+        "title": "100+ Componentes",
+        "description": "Formulários, grids, modais e muito mais prontos para usar.",
+        "icon": "component"
+      },
+      {
+        "title": "DataSource V2",
+        "description": "Gerenciamento de estado com TanStack Query e Immer para performance máxima.",
+        "icon": "database"
+      },
+      {
+        "title": "Type Safety",
+        "description": "TypeScript 5.7+ com inferência completa e type safety rigoroso.",
+        "icon": "shield"
+      },
+      {
+        "title": "Suporte SSR",
+        "description": "Utilitários para Next.js e TanStack Start com hidratação otimizada.",
+        "icon": "server"
+      },
+      {
+        "title": "DevTools",
+        "description": "Debug panel, performance monitoring e state inspector integrados.",
+        "icon": "tool"
+      },
+      {
+        "title": "Internacionalização",
+        "description": "Suporte nativo a múltiplos idiomas com i18next.",
+        "icon": "globe"
+      }
+    ]
+  },
+  "boilerplate": {
+    "title": "Comece em Minutos",
+    "subtitle": "Boilerplates prontos para produção",
+    "react": {
+      "title": "React Boilerplate",
+      "stack": "React 19 • Vite 6 • TypeScript",
+      "features": ["Autenticação JWT", "Command Palette", "Temas Light/Dark", "Multi-idioma"]
+    },
+    "java": {
+      "title": "Java Boilerplate",
+      "stack": "Spring Boot 3.5 • Java 17 • Docker",
+      "features": ["Multi-tenancy", "QueryDSL", "Swagger/OpenAPI", "Redis Cache"]
+    }
+  },
+  "code": {
+    "title": "Código Limpo e Type-Safe",
+    "subtitle": "Veja como é simples começar",
+    "reactTab": "React Component",
+    "javaTab": "Java Service",
+    "reactCode": "import { ArchbaseDataGrid, useArchbaseDataSource } from '@archbase/data';\n\nexport function UsersList() {\n  const dataSource = useArchbaseDataSource({\n    queryKey: ['users'],\n    queryFn: () => api.get('/users'),\n  });\n\n  return (\n    <ArchbaseDataGrid\n      dataSource={dataSource}\n      columns={[\n        { field: 'name', headerName: 'Nome' },\n        { field: 'email', headerName: 'E-mail' },\n      ]}\n    />\n  );\n}",
+    "javaCode": "@Service\npublic class UserService {\n\n    private final UserRepository userRepository;\n\n    public User create(CreateUserCommand command) {\n        User user = User.create(\n            command.name(),\n            command.email()\n        );\n        return userRepository.save(user);\n    }\n\n    @HasPermission(\"user.read\")\n    public Page<UserDto> findAll(Pageable pageable) {\n        return userRepository\n            .findAll(pageable)\n            .map(UserMapper::toDto);\n    }\n}"
+  },
+  "stats": {
+    "components": "100+",
+    "componentsLabel": "Componentes",
+    "downloads": "5K+",
+    "downloadsLabel": "Downloads",
+    "stars": "200+",
+    "starsLabel": "Estrelas",
+    "modules": "20+",
+    "modulesLabel": "Módulos"
+  },
+  "footer": {
+    "description": "Framework open source para desenvolvimento de aplicações corporativas.",
+    "products": "Produtos",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "framework": "Archbase Framework",
+    "react": "Archbase React",
+    "reactBoilerplate": "React Boilerplate",
+    "javaBoilerplate": "Java Boilerplate",
+    "documentation": "Documentação",
+    "examples": "Exemplos",
+    "blog": "Blog",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "license": "Licença",
+    "madeWith": "Feito com",
+    "by": "por"
+  },
+  "langSwitch": {
+    "en": "English",
+    "pt": "Português"
+  },
+  "components": {
+    "title": "100+ Componentes & Hooks",
+    "subtitle": "Toolkit completo para construir aplicações React corporativas com TypeScript",
+    "searchPlaceholder": "Buscar componentes, hooks...",
+    "categories": {
+      "forms": "Editores de Form",
+      "data": "Dados & Grids",
+      "layout": "Layout",
+      "security": "Segurança",
+      "viewers": "Visualizadores",
+      "advanced": "Avançados",
+      "admin": "Admin & Templates",
+      "tools": "DevTools"
+    },
+    "items": {
+      "edit": { "desc": "Editor de formulário genérico com validação" },
+      "checkbox": { "desc": "Componente de checkbox" },
+      "datePicker": { "desc": "Seletor de data com calendário" },
+      "dateTimePicker": { "desc": "Seletor de data e hora" },
+      "numberEdit": { "desc": "Input numérico com formatação" },
+      "passwordEdit": { "desc": "Input de senha com indicador de força" },
+      "textArea": { "desc": "Input de texto multi-linha" },
+      "select": { "desc": "Select dropdown" },
+      "asyncSelect": { "desc": "Select assíncrono com dados remotos" },
+      "multiSelect": { "desc": "Componente de seleção múltipla" },
+      "radioGroup": { "desc": "Grupo de radio buttons" },
+      "switch": { "desc": "Toggle switch" },
+      "lookup": { "desc": "Lookup com busca" },
+      "treeSelect": { "desc": "Select hierárquico em árvore" },
+      "colorPicker": { "desc": "Seletor de cores" },
+      "rating": { "desc": "Componente de avaliação com estrelas" },
+      "richText": { "desc": "Editor rich text (WYSIWYG)" },
+      "jsonEdit": { "desc": "Editor JSON com syntax highlighting" },
+      "maskEdit": { "desc": "Input com máscara de formatação" },
+      "imageEdit": { "desc": "Upload e crop de imagem" },
+      "fileAttachment": { "desc": "Componente de anexo de arquivos" },
+      "cron": { "desc": "Builder de expressão CRON" },
+      "operatingHours": { "desc": "Editor de horário de funcionamento" },
+      "timeRange": { "desc": "Seletor de range de tempo" },
+      "keyValue": { "desc": "Editor de pares chave-valor" },
+      "avatar": { "desc": "Upload de avatar" },
+      "dataSource": { "desc": "Camada de gerenciamento de dados" },
+      "dataSourceV2": { "desc": "DataSource aprimorado com TanStack Query" },
+      "dataGrid": { "desc": "Grid de dados completo com paginação" },
+      "dataGridPagination": { "desc": "Componente de paginação para grid" },
+      "listView": { "desc": "List view com filtragem" },
+      "compositeFilters": { "desc": "Builder de filtros compostos" },
+      "queryFilter": { "desc": "Filtro de query com suporte RSQL" },
+      "useDataSource": { "desc": "Hook para gerenciamento de dados" },
+      "useRemoteDataSource": { "desc": "Hook para busca de dados remotos" },
+      "remoteApi": { "desc": "Cliente de API remota" },
+      "adminLayout": { "desc": "Layout admin principal com sidebar" },
+      "sidebar": { "desc": "Sidebar navegável colapsável" },
+      "tabContainer": { "desc": "Container de abas" },
+      "card": { "desc": "Container card" },
+      "container": { "desc": "Container responsivo" },
+      "stack": { "desc": "Layout de pilha" },
+      "group": { "desc": "Wrapper de grupo" },
+      "masonry": { "desc": "Layout grid masonry" },
+      "spaceTemplate": { "desc": "Template baseado em espaços" },
+      "securityProvider": { "desc": "Provider de contexto de segurança" },
+      "authenticator": { "desc": "Serviço de autenticação" },
+      "tokenManager": { "desc": "Gerenciamento de tokens JWT" },
+      "userModal": { "desc": "Modal de gestão de usuários" },
+      "groupModal": { "desc": "Modal de gestão de grupos" },
+      "profileModal": { "desc": "Modal de perfil de usuário" },
+      "apiTokenModal": { "desc": "Gestão de tokens de API" },
+      "protected": { "desc": "Guard de componente baseado em permissões" },
+      "useSecurity": { "desc": "Hook para contexto de segurança" },
+      "getLoggedUser": { "desc": "Hook para obter usuário logado" },
+      "tenantManager": { "desc": "Gerenciamento multi-tenant" },
+      "imageViewer": { "desc": "Visualizador de imagens" },
+      "pdfViewer": { "desc": "Visualizador de PDF" },
+      "videoPlayer": { "desc": "Player de vídeo HTML5" },
+      "jsonViewer": { "desc": "Visualizador JSON com syntax highlight" },
+      "codeViewer": { "desc": "Visualizador de código" },
+      "textViewer": { "desc": "Visualizador de texto simples" },
+      "xmlViewer": { "desc": "Visualizador XML com syntax highlight" },
+      "htmlViewer": { "desc": "Visualizador de conteúdo HTML" },
+      "queryBuilder": { "desc": "Builder visual de queries" },
+      "kanban": { "desc": "Quadro Kanban" },
+      "spreadsheet": { "desc": "Planilha estilo Excel" },
+      "timeline": { "desc": "Visualização de timeline" },
+      "calendar": { "desc": "Componente de calendário" },
+      "charts": { "desc": "Componentes gráficos (ApexCharts, Chart.js)" },
+      "notification": { "desc": "Sistema de notificações" },
+      "onboarding": { "desc": "Tour de onboarding de usuário" },
+      "featureFlags": { "desc": "Sistema de feature flags" },
+      "workflow": { "desc": "Integração com workflow engine" },
+      "commandPalette": { "desc": "Command palette por teclado" },
+      "navProvider": { "desc": "Provider de navegação" },
+      "keepAlive": { "desc": "Manter rota ativa na navegação" },
+      "changeLang": { "desc": "Seletor de idioma" },
+      "colorScheme": { "desc": "Toggle tema dark/light" },
+      "myProfile": { "desc": "Modal meu perfil" },
+      "formTemplate": { "desc": "Template de página de formulário" },
+      "gridTemplate": { "desc": "Template de página de grid" },
+      "modalTemplate": { "desc": "Template de modal" },
+      "debugPanel": { "desc": "Painel de debug desenvolvimento" },
+      "perfMonitor": { "desc": "Monitoramento de performance" },
+      "stateInspector": { "desc": "Inspector de state React" },
+      "netMonitor": { "desc": "Monitor de requisições de rede" },
+      "memLeak": { "desc": "Detector de memory leaks" },
+      "errorBoundary": { "desc": "Boundary de erro" },
+      "logger": { "desc": "Utilitário de logging" },
+      "useValidator": { "desc": "Hook de validação de formulário" },
+      "useTheme": { "desc": "Hook de gerenciamento de tema" },
+      "forceRenderer": { "desc": "Hook para forçar re-render" }
+    },
+    "stats": {
+      "components": "Componentes",
+      "hooks": "Hooks",
+      "packages": "Pacotes",
+      "typescript": "TypeScript"
+    },
+    "poweredBy": {
+      "mantine": "Construído com"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Últimas notícias, tutoriais e atualizações da equipe Archbase",
+      "readMore": "Ler mais",
+      "readTime": "{min} min de leitura",
+      "publishedOn": "Publicado em",
+      "by": "Por",
+      "allPosts": "Todos os Posts",
+      "relatedPosts": "Posts Relacionados",
+      "share": "Compartilhar este post",
+      "copyLink": "Copiar Link",
+      "copied": "Copiado!",
+      "categories": "Categorias",
+      "allCategories": "Todos",
+      "featured": "Destaques",
+      "backToBlog": "Voltar para o Blog",
+      "searchPlaceholder": "Buscar posts...",
+      "showingPosts": "Mostrando {count} posts",
+      "noPosts": "Nenhum post encontrado com os critérios selecionados."
+    }
+  }
+}

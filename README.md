@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Archbase Site
 
-## Getting Started
+Site oficial do **Archbase Framework** - framework full-stack para aplicações empresariais.
 
-First, run the development server:
+## Sobre o Archbase
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+O Archbase é um framework moderno que combina o poder do **Spring Boot 3.5** com o **React**, oferecendo uma solução completa para desenvolvimento de aplicações empresariais com:
+
+- Domain-Driven Design (DDD) completo
+- Multi-tenancy nativo
+- CQRS + Event Bus
+- Workflow Engine
+- QueryDSL + RSQL
+- Componentes React ricos
+
+## Stack Tecnológica
+
+- **Next.js 16** - React framework com App Router
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS 4** - Estilização utilitária
+- **next-intl** - Internacionalização (pt/en)
+- **Framer Motion** - Animações
+- **Lucide React** - Ícones
+
+## Estrutura do Projeto
+
+```
+src/
+├── app/[locale]/       # Rotas internacionalizadas
+│   ├── blog/[slug]/    # Posts do blog
+│   ├── layout.tsx      # Layout por locale
+│   └── page.tsx        # Homepage
+├── components/         # Componentes React
+├── content/blog/       # Posts em Markdown
+│   ├── en/             # Posts em inglês
+│   └── pt/             # Posts em português
+├── i18n/               # Configuração de i18n
+├── lib/                # Utilitários
+└── messages/           # Arquivos de tradução
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desenvolvimento
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Instalar dependências
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Executar em modo de desenvolvimento
+npm run dev
 
-## Learn More
+# Build para produção
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Exportar site estático
+npm run export
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O site estará disponível em `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Blog
 
-## Deploy on Vercel
+Adicione novos posts criando arquivos Markdown em `src/content/blog/{locale}/` com frontmatter:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```yaml
+---
+title: Título do Post
+description: Descrição curta
+date: 2025-01-01
+tags: ['tag1', 'tag2']
+---
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Internacionalização
+
+O site suporta dois idiomas:
+- Portugal (`/pt`)
+- English (`/en`)
+
+As traduções ficam em `src/messages/{locale}.json`
+
+## Licença
+
+MIT

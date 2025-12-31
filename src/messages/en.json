@@ -1,0 +1,284 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "components": "Components",
+    "docs": "Documentation",
+    "github": "GitHub",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Full-Stack Framework for",
+    "highlight": "Enterprise Applications",
+    "subtitle": "Open Source Ecosystem with DDD Java + React Components. Build enterprise applications with productivity and quality.",
+    "cta": {
+      "primary": "Get Started",
+      "secondary": "View on GitHub"
+    }
+  },
+  "framework": {
+    "title": "Archbase Framework",
+    "subtitle": "Java Backend with DDD and Hexagonal Architecture",
+    "features": [
+      {
+        "title": "Domain-Driven Design",
+        "description": "Complete DDD implementation with Entities, Aggregates, Value Objects, and Ubiquitous Language.",
+        "icon": "domain"
+      },
+      {
+        "title": "Native Multi-tenancy",
+        "description": "Guaranteed data isolation between tenants with flexible configuration strategies.",
+        "icon": "building"
+      },
+      {
+        "title": "CQRS + Event Bus",
+        "description": "Command Query Responsibility Segregation with event bus for event-driven architecture.",
+        "icon": "zap"
+      },
+      {
+        "title": "Workflow Engine",
+        "description": "Sequential, parallel, and conditional flows for complex process orchestration.",
+        "icon": "workflow"
+      },
+      {
+        "title": "QueryDSL + RSQL",
+        "description": "Type-safe queries and dynamic filters without custom code.",
+        "icon": "search"
+      },
+      {
+        "title": "Spring Boot 3.5",
+        "description": "Complete auto-configuration with Spring Boot 3.5 and Java 17+.",
+        "icon": "spring"
+      }
+    ]
+  },
+  "react": {
+    "title": "Archbase React v3",
+    "subtitle": "100+ TypeScript Components for Corporate Frontend",
+    "features": [
+      {
+        "title": "100+ Components",
+        "description": "Forms, grids, modals, and much more ready to use.",
+        "icon": "component"
+      },
+      {
+        "title": "DataSource V2",
+        "description": "State management with TanStack Query and Immer for maximum performance.",
+        "icon": "database"
+      },
+      {
+        "title": "Type Safety",
+        "description": "TypeScript 5.7+ with full inference and rigorous type safety.",
+        "icon": "shield"
+      },
+      {
+        "title": "SSR Support",
+        "description": "Utilities for Next.js and TanStack Start with optimized hydration.",
+        "icon": "server"
+      },
+      {
+        "title": "DevTools",
+        "description": "Integrated debug panel, performance monitoring, and state inspector.",
+        "icon": "tool"
+      },
+      {
+        "title": "Internationalization",
+        "description": "Native multi-language support with i18next.",
+        "icon": "globe"
+      }
+    ]
+  },
+  "boilerplate": {
+    "title": "Start in Minutes",
+    "subtitle": "Production-ready Boilerplates",
+    "react": {
+      "title": "React Boilerplate",
+      "stack": "React 19 • Vite 6 • TypeScript",
+      "features": ["JWT Authentication", "Command Palette", "Light/Dark Themes", "Multi-language"]
+    },
+    "java": {
+      "title": "Java Boilerplate",
+      "stack": "Spring Boot 3.5 • Java 17 • Docker",
+      "features": ["Multi-tenancy", "QueryDSL", "Swagger/OpenAPI", "Redis Cache"]
+    }
+  },
+  "code": {
+    "title": "Clean and Type-Safe Code",
+    "subtitle": "See how simple it is to get started",
+    "reactTab": "React Component",
+    "javaTab": "Java Service",
+    "reactCode": "import { ArchbaseDataGrid, useArchbaseDataSource } from '@archbase/data';\n\nexport function UsersList() {\n  const dataSource = useArchbaseDataSource({\n    queryKey: ['users'],\n    queryFn: () => api.get('/users'),\n  });\n\n  return (\n    <ArchbaseDataGrid\n      dataSource={dataSource}\n      columns={[\n        { field: 'name', headerName: 'Name' },\n        { field: 'email', headerName: 'E-mail' },\n      ]}\n    />\n  );\n}",
+    "javaCode": "@Service\npublic class UserService {\n\n    private final UserRepository userRepository;\n\n    public User create(CreateUserCommand command) {\n        User user = User.create(\n            command.name(),\n            command.email()\n        );\n        return userRepository.save(user);\n    }\n\n    @HasPermission(\"user.read\")\n    public Page<UserDto> findAll(Pageable pageable) {\n        return userRepository\n            .findAll(pageable)\n            .map(UserMapper::toDto);\n    }\n}"
+  },
+  "stats": {
+    "components": "100+",
+    "componentsLabel": "Components",
+    "downloads": "5K+",
+    "downloadsLabel": "Downloads",
+    "stars": "200+",
+    "starsLabel": "Stars",
+    "modules": "20+",
+    "modulesLabel": "Modules"
+  },
+  "footer": {
+    "description": "Open source framework for enterprise application development.",
+    "products": "Products",
+    "resources": "Resources",
+    "legal": "Legal",
+    "framework": "Archbase Framework",
+    "react": "Archbase React",
+    "reactBoilerplate": "React Boilerplate",
+    "javaBoilerplate": "Java Boilerplate",
+    "documentation": "Documentation",
+    "examples": "Examples",
+    "blog": "Blog",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "license": "License",
+    "madeWith": "Made with",
+    "by": "by"
+  },
+  "langSwitch": {
+    "en": "English",
+    "pt": "Português"
+  },
+  "components": {
+    "title": "100+ Components & Hooks",
+    "subtitle": "Complete toolkit for building enterprise React applications with TypeScript",
+    "searchPlaceholder": "Search components, hooks...",
+    "categories": {
+      "forms": "Form Editors",
+      "data": "Data & Grids",
+      "layout": "Layout",
+      "security": "Security",
+      "viewers": "Viewers",
+      "advanced": "Advanced",
+      "admin": "Admin & Templates",
+      "tools": "DevTools"
+    },
+    "items": {
+      "edit": { "desc": "Generic form editor with validation support" },
+      "checkbox": { "desc": "Checkbox input component" },
+      "datePicker": { "desc": "Date picker with calendar" },
+      "dateTimePicker": { "desc": "Date and time picker" },
+      "numberEdit": { "desc": "Numeric input with formatting" },
+      "passwordEdit": { "desc": "Password input with strength indicator" },
+      "textArea": { "desc": "Multi-line text input" },
+      "select": { "desc": "Dropdown select component" },
+      "asyncSelect": { "desc": "Async select with remote data" },
+      "multiSelect": { "desc": "Multiple selection component" },
+      "radioGroup": { "desc": "Radio button group" },
+      "switch": { "desc": "Toggle switch component" },
+      "lookup": { "desc": "Lookup field with search" },
+      "treeSelect": { "desc": "Hierarchical tree select" },
+      "colorPicker": { "desc": "Color selection picker" },
+      "rating": { "desc": "Star rating component" },
+      "richText": { "desc": "Rich text editor (WYSIWYG)" },
+      "jsonEdit": { "desc": "JSON editor with syntax highlighting" },
+      "maskEdit": { "desc": "Input with mask formatting" },
+      "imageEdit": { "desc": "Image upload and crop editor" },
+      "fileAttachment": { "desc": "File attachment component" },
+      "cron": { "desc": "Cron expression builder" },
+      "operatingHours": { "desc": "Business hours editor" },
+      "timeRange": { "desc": "Time range selector" },
+      "keyValue": { "desc": "Key-value pair editor" },
+      "avatar": { "desc": "Avatar upload component" },
+      "dataSource": { "desc": "Data management layer" },
+      "dataSourceV2": { "desc": "Enhanced DataSource with TanStack Query" },
+      "dataGrid": { "desc": "Full-featured data grid with pagination" },
+      "dataGridPagination": { "desc": "Pagination component for data grid" },
+      "listView": { "desc": "List view with filtering" },
+      "compositeFilters": { "desc": "Composite filter builder" },
+      "queryFilter": { "desc": "Query filter with RSQL support" },
+      "useDataSource": { "desc": "Hook for data management" },
+      "useRemoteDataSource": { "desc": "Hook for remote data fetching" },
+      "remoteApi": { "desc": "Remote API service client" },
+      "adminLayout": { "desc": "Main admin layout with sidebar" },
+      "sidebar": { "desc": "Collapsible sidebar navigation" },
+      "tabContainer": { "desc": "Tab container component" },
+      "card": { "desc": "Card container component" },
+      "container": { "desc": "Responsive container" },
+      "stack": { "desc": "Stack layout component" },
+      "group": { "desc": "Group wrapper component" },
+      "masonry": { "desc": "Masonry grid layout" },
+      "spaceTemplate": { "desc": "Space-based template" },
+      "securityProvider": { "desc": "Security context provider" },
+      "authenticator": { "desc": "Authentication service" },
+      "tokenManager": { "desc": "JWT token management" },
+      "userModal": { "desc": "User management modal" },
+      "groupModal": { "desc": "Group management modal" },
+      "profileModal": { "desc": "User profile modal" },
+      "apiTokenModal": { "desc": "API token management" },
+      "protected": { "desc": "Permission-based component guard" },
+      "useSecurity": { "desc": "Hook for security context" },
+      "getLoggedUser": { "desc": "Hook to get current logged user" },
+      "tenantManager": { "desc": "Multi-tenant management" },
+      "imageViewer": { "desc": "Image viewing component" },
+      "pdfViewer": { "desc": "PDF document viewer" },
+      "videoPlayer": { "desc": "HTML5 video player" },
+      "jsonViewer": { "desc": "JSON syntax highlight viewer" },
+      "codeViewer": { "desc": "Code syntax highlight viewer" },
+      "textViewer": { "desc": "Plain text viewer" },
+      "xmlViewer": { "desc": "XML syntax highlight viewer" },
+      "htmlViewer": { "desc": "HTML content viewer" },
+      "queryBuilder": { "desc": "Visual query builder" },
+      "kanban": { "desc": "Kanban board component" },
+      "spreadsheet": { "desc": "Excel-like spreadsheet" },
+      "timeline": { "desc": "Timeline visualization" },
+      "calendar": { "desc": "Calendar component" },
+      "charts": { "desc": "Chart components (ApexCharts, Chart.js)" },
+      "notification": { "desc": "Notification system" },
+      "onboarding": { "desc": "User onboarding tour" },
+      "featureFlags": { "desc": "Feature flag system" },
+      "workflow": { "desc": "Workflow engine integration" },
+      "commandPalette": { "desc": "Keyboard command palette" },
+      "navProvider": { "desc": "Navigation provider" },
+      "keepAlive": { "desc": "Keep route alive on navigation" },
+      "changeLang": { "desc": "Language switcher action" },
+      "colorScheme": { "desc": "Dark/light theme toggle" },
+      "myProfile": { "desc": "My profile modal" },
+      "formTemplate": { "desc": "Form page template" },
+      "gridTemplate": { "desc": "Grid page template" },
+      "modalTemplate": { "desc": "Modal dialog template" },
+      "debugPanel": { "desc": "Development debug panel" },
+      "perfMonitor": { "desc": "Performance monitoring tool" },
+      "stateInspector": { "desc": "React state inspector" },
+      "netMonitor": { "desc": "Network request monitor" },
+      "memLeak": { "desc": "Memory leak detector" },
+      "errorBoundary": { "desc": "Error boundary component" },
+      "logger": { "desc": "Console logging utility" },
+      "useValidator": { "desc": "Form validation hook" },
+      "useTheme": { "desc": "Theme management hook" },
+      "forceRenderer": { "desc": "Force component re-render hook" }
+    },
+    "stats": {
+      "components": "Components",
+      "hooks": "Hooks",
+      "packages": "Packages",
+      "typescript": "TypeScript"
+    },
+    "poweredBy": {
+      "mantine": "Built with"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Latest news, tutorials, and updates from the Archbase team",
+      "readMore": "Read More",
+      "readTime": "{min} min read",
+      "publishedOn": "Published on",
+      "by": "By",
+      "allPosts": "All Posts",
+      "relatedPosts": "Related Posts",
+      "share": "Share this post",
+      "copyLink": "Copy Link",
+      "copied": "Copied!",
+      "categories": "Categories",
+      "allCategories": "All",
+      "featured": "Featured",
+      "backToBlog": "Back to Blog",
+      "searchPlaceholder": "Search posts...",
+      "showingPosts": "Showing {count} posts",
+      "noPosts": "No posts found matching your criteria."
+    }
+  }
+}
