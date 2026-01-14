@@ -22,9 +22,14 @@ export function Hero() {
           {/* Logo */}
           <div className="mb-8 animate-fade-in">
             <img
-              src="/images/logo_archbase.png"
+              src="/images/logo_com_texto_archbase_tema_light.png"
               alt="Archbase Logo"
-              className="h-24 mx-auto"
+              className="h-24 mx-auto dark:hidden"
+            />
+            <img
+              src="/images/logo_com_texto_archbase_tema_dark.png"
+              alt="Archbase Logo"
+              className="h-24 mx-auto hidden dark:block"
             />
           </div>
 

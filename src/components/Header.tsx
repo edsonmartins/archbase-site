@@ -52,9 +52,14 @@ export function Header() {
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-2">
             <img
-              src="/images/logo_archbase_single.png"
+              src="/images/logo_sem_texto_archbase_tema_light.png"
               alt="Archbase"
-              className="h-8 w-auto"
+              className="h-8 w-auto dark:hidden"
+            />
+            <img
+              src="/images/logo_sem_texto_archbase_tema_dark.png"
+              alt="Archbase"
+              className="h-8 w-auto hidden dark:block"
             />
             <span className="font-semibold text-lg">Archbase</span>
           </Link>
@@ -98,7 +103,9 @@ export function Header() {
             </a>
 
             <a
-              href="#"
+              href="https://react.archbase.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
             >
               {t('docs')}
@@ -148,6 +155,14 @@ export function Header() {
               >
                 <Github className="w-4 h-4" />
                 <span>{t('github')}</span>
+              </a>
+              <a
+                href="https://react.archbase.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
+              >
+                {t('docs')}
               </a>
             </div>
           </div>

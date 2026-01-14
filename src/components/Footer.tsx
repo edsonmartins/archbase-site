@@ -17,9 +17,9 @@ export function Footer() {
   ];
 
   const resourceLinks = [
-    { href: '#', label: t('documentation') },
-    { href: '#', label: t('examples') },
-    { href: '#', label: t('blog') },
+    { href: 'https://react.archbase.dev', label: t('documentation') },
+    { href: 'https://github.com/relevant-solutions/archbase-react-v3/blob/main/examples', label: t('examples') },
+    { href: `/${locale}/blog`, label: t('blog') },
   ];
 
   const legalLinks = [
@@ -36,9 +36,14 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
               <img
-                src="/images/logo_archbase_single.png"
+                src="/images/logo_sem_texto_archbase_tema_light.png"
                 alt="Archbase"
-                className="h-8 w-auto"
+                className="h-8 w-auto dark:hidden"
+              />
+              <img
+                src="/images/logo_sem_texto_archbase_tema_dark.png"
+                alt="Archbase"
+                className="h-8 w-auto hidden dark:block"
               />
               <span className="font-semibold text-lg">Archbase</span>
             </Link>
