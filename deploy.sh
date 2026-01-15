@@ -15,10 +15,11 @@ echo "  Deploy Archbase Site - Docker Swarm"
 echo "======================================"
 echo ""
 
-# Build das imagens SEM CACHE
+# Build das imagens SEM CACHE (BuildKit com opções adicionais)
+export DOCKER_BUILDKIT=1
 echo ""
 echo "Construindo imagem do Frontend (no-cache)..."
-docker build --no-cache -t ${FRONTEND_IMAGE}:latest .
+docker build --no-cache --progress=plain -t ${FRONTEND_IMAGE}:latest .
 
 # Opcional: Tag para registry
 # docker tag ${FRONTEND_IMAGE}:latest ${REGISTRY}${FRONTEND_IMAGE}:latest
