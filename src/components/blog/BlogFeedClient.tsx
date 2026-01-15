@@ -55,9 +55,9 @@ export function BlogFeedClient({ posts, locale, translations }: BlogFeedClientPr
           {/* Logo */}
           <div className="mb-6">
             <img
-              src="/images/logo_archbase_single.png"
+              src="/images/logo_sem_texto_archbase_tema_dark.png"
               alt="Archbase Blog"
-              className="h-12"
+              className="h-8 w-auto"
             />
           </div>
           <span className="inline-block px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/5 text-brand-400 text-sm mb-6">

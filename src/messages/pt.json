@@ -8,13 +8,90 @@
     "blog": "Blog"
   },
   "hero": {
-    "title": "Framework Full-Stack para",
-    "highlight": "Aplicações Corporativas",
-    "subtitle": "Ecossistema Open Source com DDD Java + React Components. Construa aplicações empresariais com produtividade e qualidade.",
+    "title": "Construa aplicações corporativas",
+    "highlight": "mais rápido",
+    "title2": "com um framework",
+    "highlight2": "full-stack unificado",
+    "subtitle": "Backend Java com DDD + componentes React. Type-safe, escalável, pronto para produção.",
     "cta": {
-      "primary": "Começar Agora",
-      "secondary": "Ver no GitHub"
+      "docs": "Ver Docs",
+      "github": "Ver no GitHub",
+      "example": "Ver Exemplo"
     }
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "metrics": {
+      "components": "100+ Componentes",
+      "modules": "20+ Módulos",
+      "patterns": "50+ Padrões",
+      "faster": "10x Mais Rápido"
+    }
+  },
+  "architecture": {
+    "title": "Visão da Arquitetura",
+    "subtitle": "Arquitetura limpa. Camadas explícitas. Sem surpresas.",
+    "description": "Arquitetura hexagonal com separação clara entre camadas. Princípios de Domain-Driven Design aplicados em todo o framework.",
+    "layers": {
+      "presentation": "Camada de Apresentação",
+      "application": "Camada de Aplicação",
+      "domain": "Camada de Domínio (DDD)",
+      "infrastructure": "Camada de Infraestrutura"
+    }
+  },
+  "productivity": {
+    "title": "Ganhos Reais de Produtividade",
+    "subtitle": "Medidos, não prometidos.",
+    "badge": "Resultados Medidos",
+    "cards": {
+      "boilerplate": {
+        "title": "Redução de Boilerplate",
+        "metric": "70%",
+        "description": "Menos código para escrever, testar e manter"
+      },
+      "timeToFeature": {
+        "title": "Time-to-First Feature",
+        "metric": "2 dias → 2 horas",
+        "description": "Da ideia à feature em produção"
+      },
+      "patterns": {
+        "title": "Padrões Padronizados",
+        "metric": "DDD + Clean Arch",
+        "description": "Padrões arquiteturais battle-tested"
+      },
+      "typeSafety": {
+        "title": "Type Safety End-to-End",
+        "metric": "100%",
+        "description": "TypeScript do frontend ao backend"
+      }
+    },
+    "testimonial": "Reduzimos nossa codebase em 60% enquanto shipamos features 3x mais rápido. Só a type safety já vale o investimento.",
+    "testimonialAuthor": "Engenheiro de Software Sênior, Empresa de Tech Corporativa"
+  },
+  "comparison": {
+    "title": "Veja a Diferença",
+    "subtitle": "Comparação real de código. Sem marketing.",
+    "badge": "Comparação de Código",
+    "without": "Sem Archbase",
+    "with": "Com Archbase",
+    "problems": {
+      "boilerplate": "50+ linhas de boilerplate",
+      "state": "Gerenciamento de estado manual",
+      "error": "Boilerplate de error handling",
+      "ui": "Construir UI de paginação/sorting"
+    },
+    "benefits": {
+      "less": "70% menos código",
+      "features": "Paginação & sorting embutidos",
+      "types": "Type safety completa",
+      "tested": "Componentes testados em produção"
+    },
+    "stats": {
+      "lines": "Menos código para manter",
+      "types": "Type-safe",
+      "scalability": "Escalável"
+    },
+    "cta": "Explore a Documentação"
   },
   "framework": {
     "title": "Archbase Framework",
@@ -105,8 +182,8 @@
   "code": {
     "title": "Código Limpo e Type-Safe",
     "subtitle": "Veja como é simples começar",
-    "reactTab": "React Component",
-    "javaTab": "Java Service",
+    "reactTab": "Componente React",
+    "javaTab": "Serviço Java",
     "reactCode": "import { ArchbaseDataGrid, useArchbaseDataSource } from '@archbase/data';\n\nexport function UsersList() {\n  const dataSource = useArchbaseDataSource({\n    queryKey: ['users'],\n    queryFn: () => api.get('/users'),\n  });\n\n  return (\n    <ArchbaseDataGrid\n      dataSource={dataSource}\n      columns={[\n        { field: 'name', headerName: 'Nome' },\n        { field: 'email', headerName: 'E-mail' },\n      ]}\n    />\n  );\n}",
     "javaCode": "@Service\npublic class UserService {\n\n    private final UserRepository userRepository;\n\n    public User create(CreateUserCommand command) {\n        User user = User.create(\n            command.name(),\n            command.email()\n        );\n        return userRepository.save(user);\n    }\n\n    @HasPermission(\"user.read\")\n    public Page<UserDto> findAll(Pageable pageable) {\n        return userRepository\n            .findAll(pageable)\n            .map(UserMapper::toDto);\n    }\n}"
   },
@@ -118,13 +195,15 @@
     "stars": "Em breve",
     "starsLabel": "Estrelas",
     "modules": "20+",
-    "modulesLabel": "Módulos"
+    "modulesLabel": "Módulos",
+    "status": "operacional"
   },
   "footer": {
     "description": "Framework open source para desenvolvimento de aplicações corporativas.",
     "products": "Produtos",
     "resources": "Recursos",
     "legal": "Legal",
+    "architecture": "Arquitetura",
     "framework": "Archbase Framework",
     "react": "Archbase React",
     "reactBoilerplate": "React Boilerplate",
@@ -134,9 +213,13 @@
     "blog": "Blog",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "license": "Licença",
-    "madeWith": "Feito com",
-    "by": "por"
+    "license": "Licença MIT",
+    "by": "por",
+    "cta": {
+      "docs": "Ver Documentação",
+      "clone": "Clonar Starter",
+      "star": "Star no GitHub"
+    }
   },
   "langSwitch": {
     "en": "English",

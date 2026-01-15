@@ -1,36 +1,126 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, BookOpen, Terminal, Star, GitFork, Package, CheckCircle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+import { useStats } from '@/lib/useStats';
 
 export function Footer() {
   const t = useTranslations('footer');
   const locale = useLocale();
+  const { stars, forks, version, isLoading } = useStats();
 
   const productLinks = [
-    { href: 'https://github.com/relevant-solutions/archbase-app-framework', label: t('framework') },
+    { href: 'https://github.com/edsonmartins/archbase-app-framework', label: t('framework') },
     { href: 'https://github.com/relevant-solutions/archbase-react-v3', label: t('react') },
     { href: 'https://github.com/relevant-solutions/archbase-react-boilerplate', label: t('reactBoilerplate') },
     { href: 'https://github.com/relevant-solutions/archbase-java-boilerplate', label: t('javaBoilerplate') },
   ];
 
   const resourceLinks = [
-    { href: 'https://react.archbase.dev', label: t('documentation') },
-    { href: 'https://github.com/relevant-solutions/archbase-react-v3/blob/main/examples', label: t('examples') },
+    { href: 'https://java.archbase.dev', label: t('documentation') },
     { href: `/${locale}/blog`, label: t('blog') },
   ];
 
-  const legalLinks = [
-    { href: '#', label: t('privacy') },
-    { href: '#', label: t('terms') },
-    { href: '#', label: t('license') },
+  const quickActions = [
+    { href: 'https://java.archbase.dev', label: t('cta.docs'), icon: BookOpen, primary: true },
+    { href: 'https://github.com/edsonmartins/archbase-react-boilerplate', label: t('cta.clone'), icon: Terminal },
+    { href: 'https://github.com/edsonmartins/archbase-react', label: t('cta.star'), icon: Star },
   ];
 
+  // Dados dinâmicos do GitHub/NPM ou fallback
+  const displayStars = stars || (isLoading ? '...' : null);
+  const displayForks = forks || (isLoading ? '...' : null);
+  const displayVersion = version || '3.0.0';
+
   return (
-    <footer className="border-t border-border/50 py-16">
+    <footer className="border-t border-border-subtle pt-16 pb-8 bg-card/30">
       <div className="container mx-auto px-6">
+        {/* GitHub Stats Dashboard - Dados Reais */}
+        <div className="mb-12 p-6 border border-border-subtle rounded-lg bg-card/50 max-w-4xl mx-auto">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <Github className="w-5 h-5 text-muted-foreground" />
+              <span className="font-mono text-sm text-muted-foreground">github.com/edsonmartins/archbase-react</span>
+            </div>
+            <a
+              href="https://github.com/edsonmartins/archbase-react"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-tech-blue hover:underline flex items-center gap-1"
+            >
+              View on GitHub <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-mono">
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-tech-yellow" />
+              <span className="text-muted-foreground">stars:</span>
+              <span className="text-tech-yellow">{displayStars || '—'}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <GitFork className="w-4 h-4 text-tech-cyan" />
+              <span className="text-muted-foreground">forks:</span>
+              <span className="text-tech-cyan">{displayForks || '—'}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Package className="w-4 h-4 text-tech-purple" />
+              <span className="text-muted-foreground">version:</span>
+              <span className="text-tech-purple">v{displayVersion}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-tech-green" />
+              <span className="text-muted-foreground">build:</span>
+              <span className="text-tech-green">passing</span>
+            </div>
+          </div>
+
+          <div className="mt-4 pt-4 border-t border-border-subtle flex flex-wrap items-center gap-4 text-xs font-mono text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-tech-green" />
+              open source
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-tech-blue" />
+              MIT License
+            </span>
+            <a
+              href="https://github.com/relevant-solutions/archbase/stargazers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-tech-yellow hover:underline flex items-center gap-1.5"
+            >
+              <Star className="w-3 h-3" />
+              {t('cta.star')}
+            </a>
+          </div>
+        </div>
+
+        {/* Quick CTAs */}
+        <div className="mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {quickActions.map((action) => {
+              const Icon = action.icon;
+              return (
+                <a
+                  key={action.label}
+                  href={action.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`terminal-button text-sm ${
+                    action.primary ? 'terminal-button-primary' : ''
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  {action.label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
@@ -59,28 +149,14 @@ export function Footer() {
               >
                 <Github className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
             </div>
           </div>
 
           {/* Products */}
           <div>
-            <h4 className="font-semibold mb-4">{t('products')}</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+              {t('products')}
+            </h4>
             <ul className="space-y-3">
               {productLinks.map((link) => (
                 <li key={link.label}>
@@ -88,8 +164,9 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors flex items-center gap-1"
                   >
+                    <span className="w-1 h-1 rounded-full bg-tech-blue" />
                     {link.label}
                   </a>
                 </li>
@@ -99,16 +176,19 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold mb-4">{t('resources')}</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+              {t('resources')}
+            </h4>
             <ul className="space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors flex items-center gap-1"
                   >
+                    <span className="w-1 h-1 rounded-full bg-tech-purple" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,34 +196,36 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4">{t('legal')}</h4>
+            <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4">
+              {t('legal')}
+            </h4>
             <ul className="space-y-3">
-              {legalLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="https://github.com/edsonmartins/archbase-react/blob/main/LICENSE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                >
+                  {t('license')}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Archbase. {t('license')}
+        <div className="pt-8 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground font-mono">
+            &copy; {new Date().getFullYear()} Archbase. MIT License.
           </p>
           <p className="text-sm text-muted-foreground">
-            {t('madeWith')} <span className="text-red-500">❤</span> {t('by')}{' '}
+            {t('by')}{' '}
             <a
               href="https://relevant.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-400 hover:text-brand-300 transition-colors"
+              className="text-tech-blue hover:text-tech-cyan transition-colors"
             >
               Relevant Solutions
             </a>

@@ -35,9 +35,9 @@ export function BlogPost({ post, relatedPosts = [], locale, translations }: Blog
         <div className="mb-6">
           <a href={`/${locale}/blog`} className="inline-block">
             <img
-              src="/images/logo_archbase_single.png"
+              src="/images/logo_sem_texto_archbase_tema_dark.png"
               alt="Archbase"
-              className="h-10"
+              className="h-8 dark:h-8 h-auto w-auto"
             />
           </a>
         </div>

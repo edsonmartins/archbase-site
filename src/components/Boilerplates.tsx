@@ -1,107 +1,116 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Rocket, FileCode, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Rocket, FileCode, Terminal, ArrowRight } from 'lucide-react';
 
 export function Boilerplates() {
   const t = useTranslations('boilerplate');
 
+  const boilerplates = [
+    {
+      key: 'react',
+      title: t('react.title'),
+      stack: t('react.stack'),
+      features: t.raw('react.features'),
+      color: 'tech-cyan',
+      gradient: 'from-tech-cyan/5 to-tech-blue/5',
+      href: 'https://github.com/edsonmartins/archbase-react-boilerplate',
+    },
+    {
+      key: 'java',
+      title: t('java.title'),
+      stack: t('java.stack'),
+      features: t.raw('java.features'),
+      color: 'tech-orange',
+      gradient: 'from-tech-orange/5 to-tech-yellow/5',
+      href: 'https://github.com/edsonmartins/archbase-java-boilerplate',
+    },
+  ];
+
   return (
-    <section id="boilerplate" className="py-32 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-500/5 to-transparent" />
+    <section id="boilerplate" className="py-24 relative">
+      <div className="absolute inset-0 grid-tech opacity-30" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/30 bg-brand-500/5 mb-6">
-            <Rocket className="w-4 h-4 text-brand-400" />
-            <span className="text-sm text-brand-400">Quick Start</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-16">
+          <span className="tech-badge tech-badge-green mb-4">
+            Quick Start
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             {t('title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
 
         {/* Boilerplates */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* React Boilerplate */}
-          <div className="group relative p-8 rounded-2xl border border-border bg-card/50 backdrop-blur hover:border-brand-500/50 transition-all duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-brand-500/20 flex items-center justify-center">
-                  <FileCode className="w-5 h-5 text-brand-400" />
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {boilerplates.map((bp, index) => (
+            <motion.div
+              key={bp.key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="metric-card h-full p-6">
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-lg bg-${bp.color}/5 flex items-center justify-center`}>
+                    <FileCode className={`w-5 h-5 text-${bp.color}`} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold font-mono">{bp.title}</h3>
+                    <p className={`text-xs text-${bp.color} font-mono mt-0.5`}>
+                      {bp.stack}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold">{t('react.title')}</h3>
+
+                {/* Features */}
+                <ul className="space-y-2 mb-6">
+                  {bp.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex items-center gap-2 text-sm">
+                      <Terminal className={`w-3.5 h-3.5 text-${bp.color} flex-shrink-0`} />
+                      <span className="text-muted-foreground font-mono">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <a
+                  href={bp.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="terminal-button w-full justify-center text-sm"
+                >
+                  <Rocket className="w-4 h-4" />
+                  Clone Repository
+                  <ArrowRight className="w-4 h-4 ml-auto" />
+                </a>
               </div>
-
-              <p className="text-muted-foreground mb-6 font-mono text-sm">
-                {t('react.stack')}
-              </p>
-
-              <ul className="space-y-3">
-                {t.raw('react.features').map((feature: string, i: number) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://github.com/relevant-solutions/archbase-react-boilerplate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 w-full py-3 rounded-lg border border-border hover:bg-brand-500 hover:border-brand-500 hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-medium"
-              >
-                <Rocket className="w-4 h-4" />
-                Get Started
-              </a>
-            </div>
-          </div>
-
-          {/* Java Boilerplate */}
-          <div className="group relative p-8 rounded-2xl border border-border bg-card/50 backdrop-blur hover:border-orange-500/50 transition-all duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                  <FileCode className="w-5 h-5 text-orange-400" />
-                </div>
-                <h3 className="text-2xl font-bold">{t('java.title')}</h3>
-              </div>
-
-              <p className="text-muted-foreground mb-6 font-mono text-sm">
-                {t('java.stack')}
-              </p>
-
-              <ul className="space-y-3">
-                {t.raw('java.features').map((feature: string, i: number) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://github.com/relevant-solutions/archbase-java-boilerplate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 w-full py-3 rounded-lg border border-border hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all flex items-center justify-center gap-2 text-sm font-medium"
-              >
-                <Rocket className="w-4 h-4" />
-                Get Started
-              </a>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Command hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-flex items-center gap-4 px-6 py-3 border border-border-subtle rounded-lg bg-card/50">
+            <span className="text-sm text-muted-foreground">Or run:</span>
+            <code className="text-sm font-mono text-tech-green">
+              npx create-archbase-app@latest
+            </code>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -93,7 +93,7 @@ export function Header() {
             </button>
 
             <a
-              href="https://github.com/relevant-solutions"
+              href="https://github.com/edsonmartins/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors text-sm"
@@ -103,7 +103,7 @@ export function Header() {
             </a>
 
             <a
-              href="https://react.archbase.dev"
+              href="https://java.archbase.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
@@ -148,7 +148,7 @@ export function Header() {
                 <span>{locale === 'en' ? tLang('pt') : tLang('en')}</span>
               </button>
               <a
-                href="https://github.com/relevant-solutions"
+                href="https://github.com/edsonmartins/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
@@ -157,7 +157,7 @@ export function Header() {
                 <span>{t('github')}</span>
               </a>
               <a
-                href="https://react.archbase.dev"
+                href="https://java.archbase.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
