@@ -126,7 +126,7 @@ export function ReactFeatures() {
           className="mt-12 text-center"
         >
           <a
-            href="https://github.com/relevant-solutions/archbase-react-v3"
+            href="https://github.com/edsonmartins/archbase-react"
             target="_blank"
             rel="noopener noreferrer"
             className="terminal-button terminal-button-primary"

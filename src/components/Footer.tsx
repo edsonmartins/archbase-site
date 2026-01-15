@@ -13,7 +13,7 @@ export function Footer() {
 
   const productLinks = [
     { href: 'https://github.com/edsonmartins/archbase-app-framework', label: t('framework') },
-    { href: 'https://github.com/relevant-solutions/archbase-react-v3', label: t('react') },
+    { href: 'https://github.com/edsonmartins/archbase-react', label: t('react') },
     { href: 'https://github.com/relevant-solutions/archbase-react-boilerplate', label: t('reactBoilerplate') },
     { href: 'https://github.com/relevant-solutions/archbase-java-boilerplate', label: t('javaBoilerplate') },
   ];
