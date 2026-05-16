@@ -7,6 +7,7 @@ import { CodeComparison } from '@/components/CodeComparison';
 import { ComponentShowcase } from '@/components/ComponentShowcase';
 import { FrameworkFeatures } from '@/components/FrameworkFeatures';
 import { ReactFeatures } from '@/components/ReactFeatures';
+import { FlutterFeatures } from '@/components/FlutterFeatures';
 import { CodeShowcase } from '@/components/CodeShowcase';
 import { Boilerplates } from '@/components/Boilerplates';
 import { Footer } from '@/components/Footer';
@@ -36,6 +37,9 @@ export default function Home() {
 
         {/* React Features - Frontend Components */}
         <ReactFeatures />
+
+        {/* Flutter Features - Mobile Framework + 3 pub.dev packages */}
+        <FlutterFeatures />
 
         {/* Component Showcase - All components grid */}
         <ComponentShowcase />

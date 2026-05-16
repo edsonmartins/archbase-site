@@ -165,6 +165,51 @@
       }
     ]
   },
+  "flutter": {
+    "title": "Archbase Flutter",
+    "subtitle": "Enterprise Flutter framework with offline-first sync, Brazilian validators and feature CLI generator",
+    "features": [
+      {
+        "title": "Offline-first",
+        "description": "Hive cache and a sync queue with exponential backoff retry — auto-flushes on reconnect.",
+        "icon": "offline"
+      },
+      {
+        "title": "Brazilian-ready",
+        "description": "Built-in validators and masks for CPF, CNPJ, CNH, Mercosul plate, BR phone. i18n with pt-BR as primary locale.",
+        "icon": "validators"
+      },
+      {
+        "title": "Material 3 + theme",
+        "description": "Light/dark theme with semantic tokens, font scale and high-contrast — all persisted.",
+        "icon": "theme"
+      },
+      {
+        "title": "State-mgmt agnostic",
+        "description": "Base classes use Flutter's ChangeNotifier/Stream. Optional adapters for Riverpod and GetX.",
+        "icon": "agnostic"
+      },
+      {
+        "title": "Screen templates",
+        "description": "Login, Splash, CRUD List/Form, Detail, Settings and Intro ready out of the box. 296 tests covering them.",
+        "icon": "screens"
+      },
+      {
+        "title": "CLI generator",
+        "description": "dart run archbase_flutter:archbase feature <name> scaffolds a complete CRUD feature in seconds.",
+        "icon": "cli"
+      }
+    ],
+    "packagesTitle": "Available on pub.dev",
+    "viewPackage": "View on pub.dev",
+    "packages": {
+      "main": "Main framework — services, widgets, screens, theme, validators and CLI.",
+      "riverpod": "Optional adapter — Riverpod providers and StateNotifier integration.",
+      "getx": "Optional adapter — GetX bindings and GetxController integration."
+    },
+    "ctaDocs": "View Documentation",
+    "ctaSource": "Source on GitHub"
+  },
   "boilerplate": {
     "title": "Start in Minutes",
     "subtitle": "Production-ready Boilerplates",

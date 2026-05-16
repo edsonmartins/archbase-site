@@ -165,6 +165,51 @@
       }
     ]
   },
+  "flutter": {
+    "title": "Archbase Flutter",
+    "subtitle": "Framework Flutter empresarial com offline-first, validadores brasileiros e CLI generator de features",
+    "features": [
+      {
+        "title": "Offline-first",
+        "description": "Cache em Hive e fila de sincronização com retry em backoff exponencial — auto-flush ao reconectar.",
+        "icon": "offline"
+      },
+      {
+        "title": "Brasileiro por padrão",
+        "description": "Validadores e máscaras de CPF, CNPJ, CNH, placa Mercosul, telefone BR. i18n com pt-BR como locale primária.",
+        "icon": "validators"
+      },
+      {
+        "title": "Material 3 + tema",
+        "description": "Theme light/dark com tokens semânticos, escala de fonte e alto contraste — tudo persistido.",
+        "icon": "theme"
+      },
+      {
+        "title": "Agnóstico de state mgmt",
+        "description": "Classes base usam ChangeNotifier/Stream do Flutter. Adapters opcionais para Riverpod e GetX.",
+        "icon": "agnostic"
+      },
+      {
+        "title": "Templates de tela",
+        "description": "Login, Splash, CRUD List/Form, Detail, Settings e Intro prontos. 296 testes garantindo qualidade.",
+        "icon": "screens"
+      },
+      {
+        "title": "CLI generator",
+        "description": "dart run archbase_flutter:archbase feature <nome> gera scaffold completo de feature CRUD em segundos.",
+        "icon": "cli"
+      }
+    ],
+    "packagesTitle": "Disponível no pub.dev",
+    "viewPackage": "Ver no pub.dev",
+    "packages": {
+      "main": "Framework principal — services, widgets, screens, theme, validators e CLI.",
+      "riverpod": "Adapter opcional — providers e StateNotifier integrados.",
+      "getx": "Adapter opcional — bindings e GetxController integrados."
+    },
+    "ctaDocs": "Ver Documentação",
+    "ctaSource": "Código no GitHub"
+  },
   "boilerplate": {
     "title": "Comece em Minutos",
     "subtitle": "Boilerplates prontos para produção",
