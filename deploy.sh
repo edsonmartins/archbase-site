@@ -8,7 +8,7 @@ set -e
 # Configurações
 STACK_NAME="archbase-site"
 FRONTEND_IMAGE="archbase-site"
-REGISTRY="" # Deixe vazio para local, ou configure seu registry (ex: registry.example.com/)
+REGISTRY="ghcr.io/integrall-tech/"
 
 echo "======================================"
 echo "  Deploy Archbase Site - Docker Swarm"
@@ -21,11 +21,10 @@ echo ""
 echo "Construindo imagem do Frontend (no-cache)..."
 docker build --no-cache --progress=plain -t ${FRONTEND_IMAGE}:latest .
 
-# Opcional: Tag para registry
-# docker tag ${FRONTEND_IMAGE}:latest ${REGISTRY}${FRONTEND_IMAGE}:latest
-
-# Opcional: Push para registry
-# docker push ${REGISTRY}${FRONTEND_IMAGE}:latest
+# Tag e push para registry
+echo "Tagging e pushing para registry..."
+docker tag ${FRONTEND_IMAGE}:latest ${REGISTRY}${FRONTEND_IMAGE}:latest
+docker push ${REGISTRY}${FRONTEND_IMAGE}:latest
 
 # Deploy da stack
 echo ""

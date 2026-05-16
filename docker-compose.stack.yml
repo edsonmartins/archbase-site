@@ -14,7 +14,7 @@ services:
   # Frontend - Nginx com Traefik
   frontend:
     <<: *default-opts
-    image: archbase-site:latest
+    image: ghcr.io/integrall-tech/archbase-site:latest
     networks:
       - traefik-network
     deploy:
