@@ -14,12 +14,16 @@ export function Footer() {
   const productLinks = [
     { href: 'https://github.com/edsonmartins/archbase-app-framework', label: t('framework') },
     { href: 'https://github.com/edsonmartins/archbase-react', label: t('react') },
+    { href: 'https://github.com/edsonmartins/archbase-flutter', label: t('flutter') },
     { href: 'https://github.com/relevant-solutions/archbase-react-boilerplate', label: t('reactBoilerplate') },
     { href: 'https://github.com/relevant-solutions/archbase-java-boilerplate', label: t('javaBoilerplate') },
+    { href: 'https://github.com/edsonmartins/archbase-flutter-boilerplate', label: t('flutterBoilerplate') },
   ];
 
   const resourceLinks = [
     { href: 'https://java.archbase.dev', label: t('documentation') },
+    { href: 'https://edsonmartins.github.io/archbase-flutter-docs/', label: t('flutterDocs') },
+    { href: 'https://pub.dev/packages/archbase_flutter', label: t('pubDev') },
     { href: `/${locale}/blog`, label: t('blog') },
   ];
 
